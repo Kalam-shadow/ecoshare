@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Items - Resource Sharing Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>View Your Items</h1>
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="help.html">Help</a>
+                <a href="logout.html">Logout</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="filter-sort">
+                <label for="categoryFilter">Filter by Category:</label>
+                <select id="categoryFilter">
+                    <option value="all">All</option>
+                    <option value="food">Food</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="accessories">Accessories</option>
+                </select>
+                <button onclick="filterItems()">Filter</button>
+            </div>
+
+            <div class="item-list">
+                <!-- Example Item -->
+                <div class="item-card">
+                    <img src="item_image.jpg" alt="Item Image">
+                    <h2>Item Name</h2>
+                    <p>Description: A brief description of the item.</p>
+                    <p>Category: Clothing</p>
+                    <p>Posted On: 2024-10-19</p>
+                    <button onclick="editItem()">Edit</button>
+                    <button onclick="deleteItem()">Delete</button>
+                </div>
+                <!-- More items will be listed here -->
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Resource Sharing Platform. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function filterItems() {
+            // Implement filtering logic here
+            alert('Filtering items based on category.');
+        }
+
+        function editItem() {
+            // Logic for editing item
+            alert('Edit item functionality not implemented yet.');
+        }
+
+        function deleteItem() {
+            // Logic for deleting item
+            alert('Delete item functionality not implemented yet.');
+        }
+    </script>
+</body>
+</html>

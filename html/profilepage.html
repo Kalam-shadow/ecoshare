@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Resource Sharing Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Profile</h1>
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="help.html">Help</a>
+                <a href="logout.html">Logout</a>
+            </nav>
+        </header>
+
+        <main>
+            <form id="profileForm" action="update_profile.html" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="profile_picture">Profile Picture:</label>
+                    <input type="file" id="profile_picture" name="profile_picture" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required value="[User Name]">
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required value="[User Username]">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required value="[User Email]">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required value="[User Phone Number]">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required value="[User Address]">
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required value="[User Location]">
+                </div>
+
+                <div class="form-group">
+                    <label for="new_password">Change Password:</label>
+                    <input type="password" id="new_password" name="new_password" minlength="8">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-button">Update Profile</button>
+                    <button type="reset" class="reset-button">Clear</button>
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Resource Sharing Platform. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
