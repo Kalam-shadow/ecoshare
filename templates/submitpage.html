@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item Submitted - Resource Sharing Platform</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div class="container">
@@ -21,14 +21,14 @@
             <p><strong>Location:</strong> <span id="submittedLocation"></span></p>
             <p><strong>Will you sell or donate this item?</strong> <span id="submittedAction"></span></p>
             <div>
-                <strong>Uploaded Image:</strong><br>
+                <strong>Uploaded Image/Video:</strong><br>
                 <img id="submittedImage" src="" alt="Submitted Item" style="max-width: 100%; margin-top: 10px;">
             </div>
         </div>
 
         <div class="navigation">
-            <button onclick="location.href='{{ url_for('post_item') }}';">Post Another Item</button>
-            <button onclick="location.href='{{ url_for('index') }}';">Go to Home</button>
+            <button onclick="location.href='postitem.html';">Post Another Item</button>
+            <button onclick="location.href='dashboard.html';">Go to Home</button>
         </div>
     </div>
 

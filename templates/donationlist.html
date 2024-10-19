@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation Overview - Resource Sharing Platform</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div class="container">
@@ -64,7 +64,7 @@
     <script>
         // Open full product view page on click
         function openProductView(itemId) {
-            window.location.href = `productview.html?item=${itemId}`;
+            window.location.href = 'productview.html?item=${itemId}';
         }
     </script>
 
