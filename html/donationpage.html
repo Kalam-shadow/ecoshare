@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page - Resource Sharing Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Donate an Item</h1>
+        <form id="donationForm" action="submit_donation.html" method="post" enctype="multipart/form-data">
+            
+            <!-- Donor Name (Auto-filled) -->
+            <div class="form-group">
+                <label for="donor_name">Donor Name:</label>
+                <input type="text" id="donor_name" name="donor_name" value="[Auto-filled User Name]" readonly>
+            </div>
+
+            <!-- Item Name -->
+            <div class="form-group">
+                <label for="item_name">Item Name:</label>
+                <input type="text" id="item_name" name="item_name" required>
+            </div>
+
+            <!-- Category -->
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="food">Food</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="accessories">Accessories</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- Quantity -->
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+            </div>
+
+            <!-- Condition -->
+            <div class="form-group">
+                <label for="condition">Condition:</label>
+                <select id="condition" name="condition" required>
+                    <option value="new">New</option>
+                    <option value="used">Used</option>
+                    <option value="refurbished">Refurbished</option>
+                </select>
+            </div>
+
+            <!-- Pickup Location -->
+            <div class="form-group">
+                <label for="pickup_location">Pickup Location:</label>
+                <input type="text" id="pickup_location" name="pickup_location" required>
+            </div>
+
+            <!-- Contact Number -->
+            <div class="form-group">
+                <label for="contact_number">Contact Number:</label>
+                <input type="tel" id="contact_number" name="contact_number" required>
+            </div>
+
+            <!-- Upload Photo/Video -->
+            <div class="form-group">
+                <label for="item_photo">Upload Photo/Video:</label>
+                <input type="file" id="item_photo" name="item_photo" accept="image/*,video/*" required>
+                <img id="imagePreview" src="" alt="Image Preview" style="display:none; max-width: 100%; margin-top: 10px;">
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+
+            <!-- Agree to Terms -->
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="agree_terms" name="agree_terms" required> I agree to the terms and conditions
+                </label>
+            </div>
+
+            <!-- Submit and Cancel Buttons -->
+            <div class="form-actions">
+                <button type="submit" class="submit-button">Submit Donation</button>
+                <button type="reset" class="reset-button">Cancel</button>
+            </div>
+
+            <!-- Access Listed Items for Donation -->
+            <div class="form-group">
+                <label for="listed_items">Your Listed Items to Donate:</label>
+                <select id="listed_items" name="listed_items">
+                    <!-- Dynamically populate items from the Post Item Page -->
+                    <option value="">Select an item from your listed donations...</option>
+                    <option value="item1">Item 1</option>
+                    <option value="item2">Item 2</option>
+                    <option value="item3">Item 3</option>
+                </select>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        // Optional: Preview Image Upload
+        document.getElementById('item_photo').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                    document.getElementById('imagePreview').style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

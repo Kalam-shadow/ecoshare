@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Overview - Resource Sharing Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Products for Donation</h1>
+            <!-- New Donation Button at the top right -->
+            <button class="new-donation-button" onclick="location.href='donationpage.html';">New Donation</button>
+        </header>
+
+        <!-- Section for Listed Items for Donation -->
+        <section class="listed-items">
+            <h2>Your Listed Items for Donation</h2>
+            <div class="product-list">
+                <!-- Example Product -->
+                <div class="product-item" onclick="openProductView('item1')">
+                    <img src="item1.jpg" alt="Item 1" class="product-image">
+                    <h3 class="item-name">Item Name 1</h3>
+                    <p class="donor-name">Donor: John Doe</p>
+                    <p class="contact-number">Contact: 123-456-7890</p>
+                </div>
+
+                <div class="product-item" onclick="openProductView('item2')">
+                    <img src="item2.jpg" alt="Item 2" class="product-image">
+                    <h3 class="item-name">Item Name 2</h3>
+                    <p class="donor-name">Donor: Jane Smith</p>
+                    <p class="contact-number">Contact: 987-654-3210</p>
+                </div>
+
+                <!-- Add more listed items dynamically here -->
+            </div>
+        </section>
+
+        <!-- Section for Donated Items -->
+        <section class="donated-items">
+            <h2>Donated Items</h2>
+            <div class="product-list">
+                <!-- Example Donated Product -->
+                <div class="product-item" onclick="openProductView('donatedItem1')">
+                    <img src="donatedItem1.jpg" alt="Donated Item 1" class="product-image">
+                    <h3 class="item-name">Item Name 3</h3>
+                    <p class="donor-name">Donor: Michael Johnson</p>
+                    <p class="contact-number">Contact: 555-555-5555</p>
+                </div>
+
+                <div class="product-item" onclick="openProductView('donatedItem2')">
+                    <img src="donatedItem2.jpg" alt="Donated Item 2" class="product-image">
+                    <h3 class="item-name">Item Name 4</h3>
+                    <p class="donor-name">Donor: Emily Davis</p>
+                    <p class="contact-number">Contact: 444-444-4444</p>
+                </div>
+
+                <!-- Add more donated items dynamically here -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Open full product view page on click
+        function openProductView(itemId) {
+            window.location.href = `productview.html?item=${itemId}`;
+        }
+    </script>
+
+    <style>
+        /* Styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .new-donation-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .new-donation-button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-item {
+            width: 250px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .item-name {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .donor-name, .contact-number {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+    </style>
+</body>
+</html>
