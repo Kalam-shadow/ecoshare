@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - Resource Sharing Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your History</h1>
+            <nav>
+                <a href="dashboard.html">Home</a>
+                <a href="help.html">Help</a>
+                <a href="logout.html">Logout</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="filter-options">
+                <label for="historyFilter">Filter by Type:</label>
+                <select id="historyFilter">
+                    <option value="all">All</option>
+                    <option value="donations">Donations</option>
+                    <option value="sales">Sales</option>
+                </select>
+                <button onclick="filterHistory()">Filter</button>
+            </div>
+
+            <h2>Donation History</h2>
+            <div class="donation-history">
+                <!-- Example Donation Item -->
+                <div class="history-item">
+                    <h3>Item Name</h3>
+                    <p>Donation Date: 2024-10-19</p>
+                    <p>Description: A brief description of the donated item.</p>
+                </div>
+                <!-- More donation items will be listed here -->
+            </div>
+
+            <h2>Sales History</h2>
+            <div class="sales-history">
+                <!-- Example Sale Item -->
+                <div class="history-item">
+                    <h3>Item Name</h3>
+                    <p>Sale Date: 2024-10-19</p>
+                    <p>Description: A brief description of the sold item.</p>
+                    <p>Sale Price: $20.00</p>
+                </div>
+                <!-- More sale items will be listed here -->
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Resource Sharing Platform. All rights reserved.</p>
+            <a href="about.html">About Us</a> | 
+            <a href="contact.html">Contact Us</a> | 
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+
+    <script>
+        function filterHistory() {
+            // Implement filtering logic here
+            alert('Filtering history based on type.');
+        }
+    </script>
+</body>
+</html>

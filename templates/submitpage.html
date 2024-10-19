@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Submitted - Resource Sharing Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Item Successfully Submitted!</h1>
+        <p>Thank you for contributing to our community by posting your item.</p>
+
+        <div class="item-details">
+            <h2>Item Details:</h2>
+            <p><strong>Item Name:</strong> <span id="submittedItemName"></span></p>
+            <p><strong>Description:</strong> <span id="submittedDescription"></span></p>
+            <p><strong>Category:</strong> <span id="submittedCategory"></span></p>
+            <p><strong>Condition:</strong> <span id="submittedCondition"></span></p>
+            <p><strong>Quantity:</strong> <span id="submittedQuantity"></span></p>
+            <p><strong>Location:</strong> <span id="submittedLocation"></span></p>
+            <p><strong>Will you sell or donate this item?</strong> <span id="submittedAction"></span></p>
+            <div>
+                <strong>Uploaded Image:</strong><br>
+                <img id="submittedImage" src="" alt="Submitted Item" style="max-width: 100%; margin-top: 10px;">
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button onclick="location.href='{{ url_for('post_item') }}';">Post Another Item</button>
+            <button onclick="location.href='{{ url_for('index') }}';">Go to Home</button>
+        </div>
+    </div>
+
+    <script>
+        // Example data, in a real application this data would come from the form submission
+        const submittedItem = {
+            name: "Example Item",
+            description: "This is an example item description.",
+            category: "Electronics",
+            condition: "New",
+            quantity: 1,
+            location: "New York",
+            action: "Sell",
+            imageUrl: "path/to/image.jpg" // Replace with the actual path of the uploaded image
+        };
+
+        // Populate the page with the submitted item details
+        document.getElementById('submittedItemName').textContent = submittedItem.name;
+        document.getElementById('submittedDescription').textContent = submittedItem.description;
+        document.getElementById('submittedCategory').textContent = submittedItem.category;
+        document.getElementById('submittedCondition').textContent = submittedItem.condition;
+        document.getElementById('submittedQuantity').textContent = submittedItem.quantity;
+        document.getElementById('submittedLocation').textContent = submittedItem.location;
+        document.getElementById('submittedAction').textContent = submittedItem.action;
+        document.getElementById('submittedImage').src = submittedItem.imageUrl;
+    </script>
+</body>
+</html>
