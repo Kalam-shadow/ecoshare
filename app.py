@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, session
 from pymongo import MongoClient
+<<<<<<< HEAD
 app = Flask(__name__)
 from queries import fetch_listed_items, fetch_donated_items
 from urllib.parse import quote_plus  # Import for URL encoding
@@ -11,6 +12,13 @@ import re
 if not os.path.exists('static/uploads'):
     os.makedirs('static/uploads')
 
+=======
+from queries import fetch_listed_items, fetch_donated_items
+from urllib.parse import quote_plus  # Import for URL encoding
+from werkzeug.security import generate_password_hash, check_password_hash  # For hashing passwords
+from datetime import datetime
+import re
+>>>>>>> 3dcdae96ab1158223b1a7c281405def3846596d8
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'  # Add a secret key for session management
@@ -44,8 +52,12 @@ def login():
 
         # Check if user exists and verify the password (no hashing for now)
         if user and password == user['password']:
+<<<<<<< HEAD
             return redirect(url_for('menu'))
 
+=======
+            return redirect(url_for('dashboard'))
+>>>>>>> 3dcdae96ab1158223b1a7c281405def3846596d8
     # Respond with success
         
         else:
@@ -146,6 +158,7 @@ def view_items():
     items = list(db.items.find({"item_owner": session.get('username')}))  # Fetch user items
     return render_template('view_items.html', items=items)
 
+<<<<<<< HEAD
 # menu route
 @app.route('/menu')
 def menu():
@@ -153,12 +166,22 @@ def menu():
 
 # Donation overview route
 @app.route('/donationlist')
+=======
+# Dashboard route
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')  # User dashboard
+
+# Donation overview route
+@app.route('/donation-list')
+>>>>>>> 3dcdae96ab1158223b1a7c281405def3846596d8
 def donationlist():
     # Fetch the donation items using the functions from the db_queries module
     listed_items = fetch_listed_items()
     donated_items = fetch_donated_items()
 
     # Render the donation list template with the data
+<<<<<<< HEAD
     return render_template('/templates/donationlist.html', listed_items=listed_items, donated_items=donated_items)
 
 
@@ -201,6 +224,9 @@ def donationpage():
 
     return render_template('donationpage.html')
 
+=======
+    return render_template('donationlist.html', listed_items=listed_items, donated_items=donated_items)
+>>>>>>> 3dcdae96ab1158223b1a7c281405def3846596d8
 # Logout route
 @app.route('/logout')
 def logout():
