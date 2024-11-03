@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import nltk
 
 # Download 'punkt' tokenizer from NLTK
-nltk.download('punkt')
+nltk.download('punkt_tab')
 
 # Function to load the language model for zero-shot classification
 def load_language_model():

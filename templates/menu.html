@@ -11,7 +11,7 @@
         <header>
             <h1>Resource Sharing Platform</h1>
             <nav>
-                <a href="dashboard.html">Home</a>
+                <a href="menu.html">Home</a>
                 <a href="profile.html">Profile</a>
                 <a href="help.html">Help</a>
                 <a href="logout.html">Logout</a>
@@ -19,17 +19,17 @@
         </header>
 
         <div class="quick-access">
-            <button onclick="location.href='postitem.html';">Post a New Item</button>
-            <button onclick="location.href='viewitems.html';">View Your Items</button>
-            <button onclick="location.href='history.html';">History</button> <!-- Updated button -->
-            <button onclick="location.href='profilepage.html';">Profile</button> <!-- Updated button -->
-            <button onclick="location.href='donationlist.html';">Donation</button> <!-- New button -->
+            <button onclick="window.location.href='post_item.html';">Post a New Item</button>
+            <button onclick="window.location.href='viewitems.html';">View Your Items</button>
+            <button onclick="window.location.href='history.html';">History</button> <!-- Updated button -->
+            <button onclick="window.location.href='profilepage.html';">Profile</button> <!-- Updated button -->
+            <button onclick="window.location.href='donationpage.html';">Donation</button>
+ <!-- New button -->
         </div>
-
         <main>
             <h2>Welcome, [User Name]!</h2>
 
-            <div class="stats-overview">
+            <div class="status-overview">
                 <h3>Your Stats</h3>
                 <p>Total Items Posted: <span id="totalItems">10</span></p>
                 <p>Total Donations Made: <span id="totalDonations">5</span></p>

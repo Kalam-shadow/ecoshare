@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Resource Sharing Platform</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
+
 <body>
     <div class="container">
         <header>
             <h1>Resource Sharing Platform</h1>
             <nav>
-                <a href="{{ url_for('login') }}">Login</a> / 
+                <a href="{{ url_for('login') }}">Login</a> /
                 <a href="{{ url_for('signup') }}">Sign Up</a>
             </nav>
         </header>
@@ -20,17 +22,18 @@
             <section class="hero">
                 <h2>Welcome to Our Community!</h2>
                 <p>Join us in redistributing surplus resources and reducing waste in your local community.</p>
-                <button onclick="location.href='{{ url_for('signup') }}';">Get Started</button>
+                <!-- Fix: Wrapped the onclick logic in a function -->
+                <button type="button" onclick="redirectToSignup();">Get Started</button>
             </section>
 
             <section class="features">
                 <h3>Platform Features</h3>
                 <div class="feature-card">
-                    <img src="{{ url_for('static', filename='pizza.jpeg') }}" alt="Resource Matching">
+                    <img src="{{ url_for('static', filename='images/pizza.jpeg') }}" alt="Resource Matching">
                     <h4>Resource Matching</h4>
                     <p>Our AI-driven matching algorithm connects users with surplus resources to those in need.</p>
                 </div>
-                <!-- More feature cards -->
+                <!-- More feature cards can be added here -->
             </section>
         </main>
 
@@ -38,5 +41,13 @@
             <p>&copy; 2024 Resource Sharing Platform. All rights reserved.</p>
         </footer>
     </div>
+
+    <!-- Fix: Added a JavaScript function to handle the redirection -->
+    <script type="text/javascript">
+        function redirectToSignup() {
+            window.location.href = "{{ url_for('signup') }}";
+        }
+    </script>
 </body>
+
 </html>
